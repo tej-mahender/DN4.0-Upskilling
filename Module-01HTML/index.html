@@ -1,25 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community Event Portal</title>
-</head>
-<body>
+    <style>
+      /* Internal CSS */
+      #welcomeBanner {
+        background-color: blue;
+        color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+
+      /* Gallery styling */
+      .gallery-img {
+        border: 3px solid #444;
+        width: 150px;
+        height: 100px;
+        object-fit: cover;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      caption {
+        caption-side: top;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding: 10px 0;
+      }
+      td {
+        padding: 10px;
+      }
+
+      /* Form styling */
+      form {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+      }
+
+      form label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      form input,
+      form select,
+      form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      form button {
+        margin-top: 15px;
+        padding: 10px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      output {
+        display: block;
+        margin-top: 10px;
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
     <!-- Navigation -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#events">Events</a>
-        <a href="#contact">Contact</a>
-        <a href="help.html" target="_blank"> Help</a>
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+      <a href="help.html" target="_blank"> Help</a>
     </nav>
+
     <!-- Main -->
     <main>
+      <section id="home">
+        <!-- Welcome Banner -->
+        <div id="welcomeBanner">Welcome back, My dear community member!!</div>
+        Don't miss
+        <span style="color: red; font-weight: bold">Special Events!</span>
+        <span class="highlight">Register now</span> to get exclusive benefits.
+      </section>
 
+      <section id="events">
+        <!-- Image Gallery Section -->
+        <section id="gallery">
+          <h2>Past Community Events Gallery</h2>
+          <table>
+            <caption>
+              Highlights from Previous Events
+            </caption>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="event1.jpg" alt="Music Festival" title="Music Festival" class="gallery-img"/>
+                  <div>Music Festival</div>
+                </td>
+                <td>
+                  <img src="event2.jpg" alt="Art Workshop" title="Art Workshop" class="gallery-img"/>
+                  <div>Art Workshop</div>
+                </td>
+                <td>
+                  <img src="event3.jpg" alt="Community Cleanup" title="Community Cleanup" class="gallery-img"/>
+                  <div>Community Cleanup</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="event4.jpg" alt="Food Fair" title="Food Fair" class="gallery-img"/>
+                  <div>Food Fair</div>
+                </td>
+                <td>
+                  <img src="event5.jpg" alt="Charity Run" title="Charity Run" class="gallery-img"/>
+                  <div>Charity Run</div>
+                </td>
+                <td>
+                  <img src="event6.jpg" alt="Book Fair" title="Book Fair" class="gallery-img"/>
+                  <div>Book Fair</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <h2>Event Registration</h2>
+        <form onsubmit="showConfirmation(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus/>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required/>
+
+          <label for="eventDate">Event Date:</label>
+          <input type="date" id="eventDate" name="eventDate" required />
+
+          <label for="eventType">Event Type:</label>
+          <select id="eventType" name="eventType" required>
+            <option value="">Select an event</option>
+            <option value="music">Music Festival</option>
+            <option value="art">Art Workshop</option>
+            <option value="run">Charity Run</option>
+          </select>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Any notes or special requests..." rows="4">
+          </textarea>
+
+          <button type="submit">Register</button>
+
+          <output id="confirmation"></output>
+        </form>
+
+        <!-- Event Feedback Section -->
+        <section id="feedback">
+          <h2>Event Feedback</h2>
+
+          <form id="feedbackForm">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" placeholder="Enter phone number" onblur="validatePhone()"/>
+
+            <label for="eventSelect">Choose Event:</label>
+            <select id="eventSelect" onchange="displayFee()">
+              <option value="">-- Select --</option>
+              <option value="10">Art Workshop - $10</option>
+              <option value="20">Music Festival - $20</option>
+              <option value="0">Community Cleanup - Free</option>
+            </select>
+            <p id="feeDisplay" class="highlight"></p>
+
+            <label for="feedbackText">Your Feedback:</label>
+            <textarea id="feedbackText" rows="4" placeholder="Type your feedback..." onkeyup="countChars()"></textarea>
+            <p><span id="charCount">0</span> characters typed</p>
+
+            <button type="button" onclick="submitFeedback()">
+              Submit Feedback
+            </button>
+            <p id="feedbackMsg"></p>
+          </form>
+
+          <h3>Click to Enlarge Image</h3>
+          <img src="event1.jpg" alt="Event Sample" title="Double-click to enlarge" class="gallery-img" id="enlargeImg" ondblclick="enlargeImage()"/>
+        </section>
+
+        <!-- Video Invite Section -->
+        <section id="videoInvite">
+          <h2>Event Promo Video</h2>
+
+          <video id="promoVideo" width="320" height="240" controls oncanplay="videoReady()">
+            <source src="promo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p id="videoStatus" class="highlight"></p>
+        </section>
+
+        <!-- User Preferences Section -->
+        <section id="preferences">
+          <h2>Event Preferences</h2>
+
+          <label for="preferredEvent">Select Your Preferred Event Type:</label>
+          <select id="preferredEvent">
+            <option value="">-- Select --</option>
+            <option value="Art">Art</option>
+            <option value="Music">Music</option>
+            <option value="Sports">Sports</option>
+            <option value="Tech">Tech</option>
+          </select>
+
+          <button onclick="savePreference()">Save Preference</button>
+          <button onclick="clearPreferences()">Clear Preferences</button>
+
+          <p id="preferenceMsg" class="highlight"></p>
+        </section>
+
+        <!-- Geolocation Section -->
+        <section id="geolocation">
+          <h2>Find Nearby Events</h2>
+          <button onclick="getLocation()">Find Nearby Events</button>
+          <p id="locationResult" class="highlight"></p>
+        </section>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Contact information goes here.</p>
+      </section>
     </main>
     <!-- Footer -->
     <footer>
-
+      <p>© 2025 Community Event Portal. All rights reserved.</p>
     </footer>
-</body>
+
+    <script>
+      function showConfirmation(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const output = document.getElementById("confirmation");
+        output.textContent = `Thank you, ${name}, your registration has been received!`;
+      }
+
+      function validatePhone() {
+        const phone = document.getElementById("phone");
+        const phoneValue = phone.value.trim();
+        const phonePattern = /^\d{10}$/;
+
+        if (!phonePattern.test(phoneValue)) {
+          alert("Please enter a valid 10-digit phone number.");
+          phone.focus();
+        }
+      }
+
+      function displayFee() {
+        const select = document.getElementById("eventSelect");
+        const fee = select.value;
+        const feeDisplay = document.getElementById("feeDisplay");
+        if (fee !== "") {
+          feeDisplay.textContent = `Event fee: $${fee}`;
+        } else {
+          feeDisplay.textContent = "";
+        }
+      }
+
+      function countChars() {
+        const feedback = document.getElementById("feedbackText").value;
+        document.getElementById("charCount").textContent = feedback.length;
+      }
+
+      function submitFeedback() {
+        document.getElementById("feedbackMsg").textContent =
+          "Thank you for your feedback!";
+      }
+
+      function enlargeImage() {
+        const img = document.getElementById("enlargeImg");
+        img.style.width = "300px";
+        img.style.height = "200px";
+        img.style.transition = "0.3s";
+      }
+
+      function videoReady() {
+        document.getElementById("videoStatus").textContent =
+          "🎬 Video ready to play!";
+      }
+
+      // Warn user before leaving if feedback is not empty
+      window.onbeforeunload = function (e) {
+        const feedback = document.getElementById("feedbackText");
+        if (feedback && feedback.value.trim() !== "") {
+          return "You have unsaved feedback. Are you sure you want to leave?";
+        }
+      };
+
+      // Save to localStorage when user clicks "Save Preference"
+      function savePreference() {
+        const selected = document.getElementById("preferredEvent").value;
+        if (selected !== "") {
+          localStorage.setItem("preferredEventType", selected);
+          sessionStorage.setItem("lastSelected", selected); // Just for example
+          document.getElementById(
+            "preferenceMsg"
+          ).textContent = `Saved: ${selected}`;
+        }
+      }
+
+      // Load preference on page load
+      window.addEventListener("load", function () {
+        const saved = localStorage.getItem("preferredEventType");
+        if (saved) {
+          document.getElementById("preferredEvent").value = saved;
+          document.getElementById(
+            "preferenceMsg"
+          ).textContent = `Welcome back! Preferred event: ${saved}`;
+        }
+      });
+
+      // Clear both localStorage and sessionStorage
+      function clearPreferences() {
+        localStorage.removeItem("preferredEventType");
+        sessionStorage.clear();
+        document.getElementById("preferredEvent").value = "";
+        document.getElementById("preferenceMsg").textContent =
+          "Preferences cleared.";
+      }
+
+      function getLocation() {
+        const output = document.getElementById("locationResult");
+
+        if (!navigator.geolocation) {
+          output.textContent = "Geolocation is not supported by your browser.";
+          return;
+        }
+
+        output.textContent = "Locating...";
+
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const latitude = position.coords.latitude.toFixed(4);
+            const longitude = position.coords.longitude.toFixed(4);
+            output.textContent = `Your coordinates: Latitude ${latitude}, Longitude ${longitude}`;
+          },
+          (error) => {
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                output.textContent = "User denied the request for Geolocation.";
+                break;
+              case error.POSITION_UNAVAILABLE:
+                output.textContent = "Location information is unavailable.";
+                break;
+              case error.TIMEOUT:
+                output.textContent =
+                  "The request to get user location timed out.";
+                break;
+              default:
+                output.textContent = "An unknown error occurred.";
+            }
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0,
+          }
+        );
+      }
+    </script>
+  </body>
 </html>
