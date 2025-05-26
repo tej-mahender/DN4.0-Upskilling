@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Cards and Media Objects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+   <!-- Bootstrap Icons -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+     .banner-heading {
+        background: linear-gradient(90deg, gold, silver);
+        padding: 1rem 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    body {
+      padding-bottom: 100px; /* prevent footer overlap */
+    }
+  </style>
+</head>
+
+<body>
+
+    <!-- Exercise 11 -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4 banner-heading">Exercise 11- Cards and Media Objects 
+    </h1>
+
+
+    <h3 class="text-secondary">11.1 - Profile Card</h3>
+    <div class="card" style="width: 18rem;">
+      <img src="./assets/" class="card-img-top" alt="Profile">
+      <div class="card-body">
+        <h5 class="card-title">Jane Doe</h5>
+        <p class="card-text">Web Developer with a passion for responsive design and clean code.</p>
+        <a href="#" class="btn btn-primary">View Profile</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3 class="text-secondary">11.2 - Media Object Layout</h3>
+    <div class="d-flex align-items-start">
+      <img src="./assets/image.jpg" class="me-3 rounded" alt="Thumbnail">
+      <div>
+        <h5>Media Heading</h5>
+        <p>
+          This is an example of a media object layout using Bootstrap 5. The image is aligned to the left of the text, which flows beside it.
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <!-- Exercise 12-->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 banner-heading">Exercise 12 - Spacing Utilities </h1>
+        <h3 class="my-4 text-secondary">12.1 - Margin and Padding</h2>
+        
+        <div class="border rounded p-3 mb-4">
+            <!-- Header with margin top 4 -->
+            <header class="bg-primary text-white mt-4 p-2 rounded">
+                <h3>Website Header</h3>
+            </header>
+            
+            <!-- Main content with margin 3 and padding y-axis 5 -->
+            <main class="m-3 py-5 bg-light rounded">
+                <section class="p-2">
+                    <h4>Content Section</h4>
+                    <p>This section has padding 2 on all sides.</p>
+                </section>
+            </main>
+            
+            <!-- Footer with margin top 4 and padding 2 -->
+            <footer class="mt-4 p-2 bg-dark text-white rounded">
+                <p>Footer content</p>
+            </footer>
+        </div>
+
+    <hr>
+
+    <!-- Exercise 12.2: Pricing Section -->
+    <h3 class="mb-4 text-secondary"> 12.2 - Pricing Section</h3>
+
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="border rounded p-4 h-100">
+          <h4 class="mb-3">Basic</h4>
+          <p class="display-6">$9/mo</p>
+          <ul class="list-unstyled mb-4">
+            <li>1 User</li>
+            <li>10 Projects</li>
+            <li>Email Support</li>
+          </ul>
+          <button class="btn btn-outline-primary w-100">Choose Plan</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="border rounded p-4 h-100 bg-light">
+          <h4 class="mb-3">Pro</h4>
+          <p class="display-6">$29/mo</p>
+          <ul class="list-unstyled mb-4">
+            <li>5 Users</li>
+            <li>50 Projects</li>
+            <li>Priority Support</li>
+          </ul>
+          <button class="btn btn-primary w-100">Choose Plan</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="border rounded p-4 h-100">
+          <h4 class="mb-3">Enterprise</h4>
+          <p class="display-6">$99/mo</p>
+          <ul class="list-unstyled mb-4">
+            <li>Unlimited Users</li>
+            <li>Unlimited Projects</li>
+            <li>24/7 Support</li>
+          </ul>
+          <button class="btn btn-outline-dark w-100">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+
+     </div>
+
+    <!-- Exercise 13 -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 banner-heading">Exercise 13 - Colors and Backgrounds </h1>
+        <!-- Exercise 13.1: Dashboard with Contextual Backgrounds -->
+        <h3 class="mb-4 text-secondary"> 13.1 - Dashboard Colors</h3>
+    
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="p-3 text-white bg-primary rounded">
+              <h5>Primary</h5>
+              <p class="mb-0">Some dashboard info here.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-3 text-dark bg-warning rounded">
+              <h5>Warning</h5>
+              <p class="mb-0">System alert level info.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-3 text-white bg-success rounded">
+              <h5>Success</h5>
+              <p class="mb-0">Everything is running smoothly.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-3 text-white bg-danger rounded">
+              <h5>Danger</h5>
+              <p class="mb-0">Critical issue detected.</p>
+            </div>
+          </div>
+        </div>
+    
+        <hr/>
+    
+        <!-- Exercise 13.2: Dark Gradient Background -->
+        <h3 class="mb-4 text-secondary"> 13.2 - Dark Gradient Section</h3>
+    
+        <div class="p-5 bg-dark bg-gradient text-white rounded text-center">
+          <h3 class="mb-3">Welcome to the Dark Side</h3>
+          <p>This section uses <code>bg-dark</code> and <code>bg-gradient</code> with white text for contrast.</p>
+          <button class="btn btn-outline-light">Explore More</button>
+        </div>
+      </div>
+
+    <!-- Exercise 14 -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 banner-heading">Exercise 14 - Display and Visibility</h1>
+        <h3 class="mb-4 text-secondary">14.1 - Responsive Visibility</h3>
+    
+        <!-- Hidden on all, shown from md up -->
+        <div class="bg-info text-white p-3 mb-3 d-none d-md-block">
+          This box is <strong> hidden on small screens </strong> and visible from <code> md </code> and up.
+        </div>
+    
+        <!-- Hidden on all, shown only from lg and up as flex -->
+        <div class="bg-success text-white p-3 mb-3 d-none d-lg-flex justify-content-center">
+          This section uses <code> d-lg-flex </code> and is <strong> only visible on large screens and up</strong>.
+        </div>
+    
+        <!-- Always visible -->
+        <div class="bg-secondary text-white p-3">
+          This section is always visible regardless of screen size.
+        </div>
+    
+        <hr >
+    
+        <h3 class="mb-2 text-secondary"> 14.2 - Responsive Sidebar</h3>
+    
+        <div class="row">
+          <!-- Sidebar only on md and up -->
+          <div class="col-md-3 d-none d-md-block bg-light border-end p-3">
+            <h5>Sidebar</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+            </ul>
+          </div>
+    
+          <!-- Main content -->
+          <div class="col-md-9 p-3">
+            <h4>Main Content</h4>
+            <p>This content area expands fully on mobile and adjusts when the sidebar is visible on larger screens.</p>
+          </div>
+        </div>
+    
+      </div>
+
+    <!-- Exercise 15 -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 banner-heading">Exercise 15 - Borders, Shadows & Rounded Corners</h1>
+        <!-- Exercise 15.1 -->
+        <h3 class="mb-4 text-secondary">15.1 - Image with Border and Rounded Corners</h3>
+        <div class="text-center">
+          <img 
+            src="./assets/" 
+            class="border border-primary border-3 rounded-circle" 
+            alt="Profile Image" 
+          />
+          <p class="mt-3">This image uses <code>border-primary</code>, <code>border-3</code>, and <code>rounded-circle</code>.</p>
+        </div>
+    
+        <hr>
+    
+        <!-- Exercise 15.2 -->
+        <h3 class="mb-4 text-secondary">Exercise 15.2: Card with Shadow and Rounded Pill</h3>
+        <div class="card shadow-lg p-4 rounded-pill text-center">
+          <h5 class="card-title">Rounded Pill Card</h5>
+          <p class="card-text">This card has <code>shadow-lg</code> and <code>rounded-pill</code> for a soft, capsule look.</p>
+          <a href="#" class="btn btn-primary rounded-pill px-4">Click Me</a>
+        </div>
+    
+      </div>
+
+    <!-- Exercise 16 -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 banner-heading">Exercise 16 - Positioning Utilities</h1>
+    
+        <!-- Exercise 16.2 -->
+        <h3 class="mb-4 text-secondary"> 16.2 - Badge Overlay on Image</h2>
+        <div class="position-relative d-inline-block">
+          <img src="./assets/image.jpg" class="img-thumbnail" alt="Sample Image">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            New
+          </span>
+        </div>
+      </div>
+    
+    <!-- Exercise 17 -->  
+    <div class="container my-5">
+    <h1 class="text-center mb-4 banner-heading">Exercise 17 - Icons with Bootstrap Icons </h1>
+    <h3 class="mb-4 text-secondary">17.2 - Icon-Only Buttons</h3>
+    <div class="d-flex gap-3">
+      <button class="btn btn-outline-primary" title="Search">
+        <i class="bi bi-search"></i>
+      </button>
+      <button class="btn btn-outline-dark icon-btn action-btn" title="Dark Mode">
+        <i class="bi bi-moon-fill"></i>
+    </button>
+      <button class="btn btn-outline-danger" title="Delete">
+        <i class="bi bi-trash"></i>
+      </button>
+      <button class="btn btn-outline-primary icon-btn action-btn" title="Download">
+        <i class="bi bi-download"></i>
+    </button>
+      <button class="btn btn-outline-secondary icon-btn action-btn" title="Settings">
+        <i class="bi bi-gear"></i>
+      </button>
+      <button class="btn btn-outline-success icon-btn action-btn" title="Check">
+        <i class="bi bi-share"></i>
+      </button>
+    </div>
+  </div>
+
+    <!-- Exercise 18 -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4 banner-heading">Exercise 18 Bootstrap 5 JavaScript Plugins 
+        </h1>
+        <!-- Exercise 18.1: Modal Popup -->
+        <h3 class="mb-4 text-secondary">18.1 - Modal Popup</h3>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch Modal
+        </button>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                This is the content inside the modal popup.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <hr/>
+    
+        <!-- Exercise 18.2: Accordion -->
+        <h3 class="mb-4 text-secondary">18.2 - Accordion</h3>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                Accordion Item #1
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                This is the first item's accordion content.
+              </div>
+            </div>
+          </div>
+    
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                This is the second item's accordion content.
+              </div>
+            </div>
+          </div>
+    
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                Accordion Item #3
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                This is the third item's accordion content.
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Fixed Footer Exercise 16.1 & 17.1 -->
+      <footer class="bg-dark text-white text-center py-3 position-fixed bottom-0 start-0 end-0 w-100">
+        <h5 class="text-center mb-4">16.1 - Fixed Footer & Exercise 17.1 - Social Media Icons</h5>
+        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-linkedin"></i></a>
+      </footer>
+    
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

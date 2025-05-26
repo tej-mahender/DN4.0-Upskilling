@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Colors and Backgrounds</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="container my-5">
+    <!-- Exercise 13.1: Dashboard with Contextual Backgrounds -->
+    <h2 class="mb-4">Exercise 13.1: Dashboard Colors</h2>
+
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="p-3 text-white bg-primary rounded">
+          <h5>Primary</h5>
+          <p class="mb-0">Some dashboard info here.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-3 text-dark bg-warning rounded">
+          <h5>Warning</h5>
+          <p class="mb-0">System alert level info.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-3 text-white bg-success rounded">
+          <h5>Success</h5>
+          <p class="mb-0">Everything is running smoothly.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="p-3 text-white bg-danger rounded">
+          <h5>Danger</h5>
+          <p class="mb-0">Critical issue detected.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- Exercise 13.2: Dark Gradient Background -->
+    <h2 class="mb-4">Exercise 13.2: Dark Gradient Section</h2>
+
+    <div class="p-5 bg-dark bg-gradient text-white rounded text-center">
+      <h3 class="mb-3">Welcome to the Dark Side</h3>
+      <p>This section uses <code>bg-dark</code> and <code>bg-gradient</code> with white text for contrast.</p>
+      <button class="btn btn-outline-light">Explore More</button>
+    </div>
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="bg-primary bg-gradient text-white p-4 rounded text-center">
+                    <h4>Primary Gradient</h4>
+                    <p>.bg-primary.bg-gradient</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-success bg-gradient text-white p-4 rounded text-center">
+                    <h4>Success Gradient</h4>
+                    <p>.bg-success.bg-gradient</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-danger bg-gradient text-white p-4 rounded text-center">
+                    <h4>Danger Gradient</h4>
+                    <p>.bg-danger.bg-gradient</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
