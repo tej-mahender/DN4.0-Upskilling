@@ -1,0 +1,243 @@
+/*  Reset Styles (Universal Selector)*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Section Headers with Gradient */
+h2 {
+  background: linear-gradient(to right, #004080, #66a3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+/* ID Selector: Main Header Styling */
+#mainHeader {
+  background-color: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 3px solid #004080;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Class Selector: Event Card Styling */
+.eventCard {
+  border: 2px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f0f8ff;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Grouping Selector: Headings and Paragraphs */
+h3, p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: justify;
+  margin-top: 15px;
+}
+
+/* General Body Styling with Background */
+body {
+  background-image: url("./assets/background-city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: "Roboto", sans-serif;
+  padding: 20px;
+}
+
+/* Typography: Custom Fonts and Text */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.description {
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
+  text-align: left;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+}
+
+/* Link and List Styling */
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #003366;
+  padding: 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+nav a:link {
+  color: #ffffff;
+}
+nav a:visited {
+  color: #ccccff;
+}
+nav a:hover {
+  color: #ffcc00;
+  background-color: #002244;
+  border-radius: 5px;
+}
+nav a:active {
+  color: red;
+}
+ul.navList {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-left: 0;
+}
+ul.navList li {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  text-align: center;
+}
+td {
+  padding: 10px;
+}
+caption {
+  caption-side: top;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+table, th, td {
+  border: 1px solid #999;
+}
+table tr:nth-child(even) {
+  background-color: #eef;
+}
+/* Gallery Images and Layout */
+.gallery-img {
+  border: 3px solid #444;
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/*  Form Styling & Feedback */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+form input, form select, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+form input:focus, form select:focus, form textarea:focus {
+  outline: 2px solid #66a3ff;
+}
+
+/* CTA Button */
+button, .cta-button {
+  background-color: rgba(0, 123, 255, 0.9);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Confirmation message */
+output {
+  display: block;
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Footer Styling  */
+footer {
+  background-color: #004466;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/*  Multi-column Layout for Bulletin */
+#bulletin {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  padding: 1rem;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #f9f9f9;
+  padding: 30px;
+  margin: 40px auto;
+  border-top: 2px solid #0073e6;
+  border-radius: 8px;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: auto;
+  }
+
+  body {
+    font-size: 90%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+}
